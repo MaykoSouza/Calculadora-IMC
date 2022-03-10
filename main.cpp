@@ -20,8 +20,8 @@ struct cadastro
   
 
 
-int main ()
-{
+int main (){
+    
   cadastro paciente1;
   
   cout << "Hello World" << endl;
@@ -38,10 +38,40 @@ int main ()
   cout << "digite seu telefone:_______";
     cin >> paciente1.telefone;
     
+    cout << ""<<endl;
+    
     float exponiciacao = pow(paciente1.altura,2);
     paciente1.imc = (paciente1.peso/exponiciacao);
     
     cout << "seu IMC é :   ";
-    cout << paciente1.imc;
+    
+    cout << paciente1.imc << endl; 
+    cout << ""<<endl;
+    
+    if( paciente1.imc < 18.5){
+        
+        cout << "você está abaixo do peso recomenda-se consulta ao nutriconista ";
+        cout << paciente1.nome;
+    }
+    if (paciente1.imc >= 18.5 && paciente1.imc < 24.9 ){
+        
+        cout << "seu peso está ideal ";
+        cout << paciente1.nome;
+      
+    }  
+    if (paciente1.imc >= 24.9 && paciente1.imc < 30 ){
+        
+        cout << "você está acima do peso ";
+        cout << paciente1.nome;
+        
+    }
+    if (paciente1.imc > 30 ){
+        
+        cout << "você está com obesidade  recomenda-se consulta ao nutriconista ";
+        cout << paciente1.nome;
+        
+    }
+    
    return 0;
 }
+
